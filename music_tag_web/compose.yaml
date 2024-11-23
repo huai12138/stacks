@@ -1,0 +1,18 @@
+version: "3"
+services:
+  music-tag:
+    image: xhongc/music_tag_web:latest
+    container_name: music-tag-web
+    network_mode: bridge
+    environment:
+      - PUID=3000
+      - PGID=3000
+      - TZ=Asia/Shanghai
+    ports:
+      - 8001:8001
+    volumes:
+      - /mnt/user/data/media/Music:/app/media:rw
+      - /mnt/user/data/appdata/music_tag_web:/app/data
+    command: /start
+    restart: unless-stopped
+networks: {}

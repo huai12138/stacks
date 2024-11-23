@@ -1,0 +1,18 @@
+version: "2.1"
+services:
+  tinymediamanager:
+    image: tinymediamanager/tinymediamanager:latest
+    container_name: tinymediamanager
+    environment:
+      - USER_ID=3000
+      - GROUP_ID=3000
+      - TZ=Asia/Shanghai
+      - ALLOW_DIRECT_VNC=true
+    volumes:
+      - /mnt/user/data/appdata/tinymediamanager:/data
+      - /mnt/user/data/downloads/media:/media
+    network_mode: bridge
+    ports:
+      - 5900:5900 # VNC port
+      - 4000:4000 # Webinterface
+    restart: unless-stopped

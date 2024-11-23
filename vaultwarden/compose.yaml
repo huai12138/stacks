@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  vaultwarden:
+    container_name: vaultwarden
+    image: vaultwarden/server:latest
+    volumes:
+      - /mnt/user/data/appdata/vaultwarden:/data
+    network_mode: bridge
+    ports:
+      - 8181:80
+    restart: unless-stopped  
+networks: {}
