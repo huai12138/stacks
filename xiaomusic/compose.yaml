@@ -1,0 +1,16 @@
+services:
+  xiaomusic:
+    image: hanxi/xiaomusic
+    container_name: xiaomusic
+    restart: unless-stopped
+    network_mode: bridge
+    environment:
+      - PUID=3000
+      - PGID=3000
+      - TZ=Asia/Shanghai
+    ports:
+      - 8090:8090
+    volumes:
+      - /mnt/user/data/media/Music:/app/music
+      - /mnt/user/data/appdata/xiaomusic:/app/conf
+networks: {}
