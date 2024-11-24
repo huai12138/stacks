@@ -6,7 +6,7 @@ services:
     network_mode: bridge
     environment:
       - PUID=3000
-      - PGID=3000
+      - PGID=100
       - TZ=Asia/Shanghai
     ports:
       - 8090:8090

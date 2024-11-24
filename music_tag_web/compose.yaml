@@ -6,13 +6,13 @@ services:
     network_mode: bridge
     environment:
       - PUID=3000
-      - PGID=3000
+      - PGID=100
       - TZ=Asia/Shanghai
     ports:
       - 8002:8002
     volumes:
       - /mnt/user/data/media/Music:/app/media:rw
       - /mnt/user/data/appdata/music_tag_web:/app/data
-#    command: /start
+    #    command: /start
     restart: unless-stopped
 networks: {}

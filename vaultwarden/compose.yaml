@@ -5,8 +5,12 @@ services:
     image: vaultwarden/server:latest
     volumes:
       - /mnt/user/data/appdata/vaultwarden:/data
+    environment:
+      - PUID=3000
+      - PGID=100
+      - TZ=Asia/Shanghai
     network_mode: bridge
     ports:
       - 8181:80
-    restart: unless-stopped  
+    restart: unless-stopped
 networks: {}

@@ -8,7 +8,7 @@ services:
     #      - ./browser:/root/.cache/rod/browser    # 容器重启后无需再次下载 chrome，除非 go-rod 更新
     environment:
       - PUID=3000 # uid
-      - PGID=3000 # gid
+      - PGID=100 # gid
       - TZ=Asia/Shanghai # 时区
       - UMASK=022 # 权限掩码
     restart: unless-stopped
@@ -18,4 +18,4 @@ services:
     ports:
       - 19035:19035 # 从0.20.0版本开始，通过webui来设置
       - 19037:19037 # webui 的视频列表读取图片用，务必设置不要暴露到外网
-networks: {}
+

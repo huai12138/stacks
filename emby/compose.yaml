@@ -4,7 +4,7 @@ services:
     container_name: emby
     environment:
       - PUID=3000
-      - PGID=3000
+      - PGID=100
       - TZ=Asia/Shanghai
     volumes:
       - /mnt/user/data/appdata/emby:/config
@@ -16,4 +16,4 @@ services:
     devices:
       - /dev/dri:/dev/dri #optional
     restart: unless-stopped
-networks: {}
+

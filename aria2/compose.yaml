@@ -5,7 +5,7 @@ services:
     image: p3terx/aria2-pro
     environment:
       - PUID=3000
-      - PGID=3000
+      - PGID=100
       - UMASK_SET=022
       - RPC_SECRET=1107530255
       - RPC_PORT=6800
@@ -39,4 +39,4 @@ services:
     ports:
       - 6880:6880
     restart: unless-stopped
-networks: {}
+
