@@ -11,7 +11,7 @@ services:
       - /mnt/user/data/media:/data
     network_mode: bridge
     ports:
-      - 8097:8096
+      - 8096:8096
       - 8920:8920 #optional
     devices:
       - /dev/dri:/dev/dri #optional
