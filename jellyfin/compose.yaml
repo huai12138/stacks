@@ -1,0 +1,19 @@
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=3000
+      - PGID=100
+      - TZ=Asia/Shanghai
+    volumes:
+      - /mnt/user/data/appdata/jellyfin:/config
+      - /mnt/user/data/media:/data
+      - /mnt/user/data/MiSans:/usr/local/share/fonts/truetype/MiSans
+    devices:
+      - /dev/dri:/dev/dri
+    network_mode: bridge
+    ports:
+      - 8096:8096
+    restart: unless-stopped
+networks: {}
