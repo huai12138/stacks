@@ -1,0 +1,18 @@
+version: "3.3"
+services:
+  alist:
+    image: xhofe/alist:latest
+    container_name: alist
+    volumes:
+      - /mnt/user/data/appdata/alist:/opt/alist/data
+      - /mnt/user/data/:/mnt/user/data
+    network_mode: bridge
+    ports:
+      - 5244:5244
+    environment:
+      - PUID=3000
+      - PGID=100
+      - UMASK=022
+      - TZ=Asia/Shanghai
+    restart: unless-stopped
+networks: {}
