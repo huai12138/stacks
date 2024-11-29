@@ -7,13 +7,14 @@ services:
     environment:
       - PUID=3000
       - PGID=100
-      - TZ=Etc/UTC
+      - TZ=Asia/Shanghai
       - PASSWORD= #optional
       - CLI_ARGS= #optional
     volumes:
       - /mnt/user/data/appdata/calibre:/config
       - /mnt/user/data/books:/books
       - /mnt/user/data/epub:/epub
+    network_mode: bridge
     ports:
       - 8080:8080
       - 8081:8081
