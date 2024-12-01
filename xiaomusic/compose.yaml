@@ -5,12 +5,12 @@ services:
     restart: unless-stopped
     network_mode: bridge
     environment:
-      - PUID=3000
-      - PGID=100
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
     ports:
       - 8090:8090
     volumes:
-      - /mnt/user/data/media/Music:/app/music
-      - /mnt/user/data/appdata/xiaomusic/conf:/app/conf
+      - /mnt/data/media/Music:/app/music
+      - /mnt/data/appdata/xiaomusic/conf:/app/conf
 networks: {}

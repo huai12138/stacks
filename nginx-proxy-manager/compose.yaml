@@ -23,10 +23,10 @@ services:
       # Uncomment this if IPv6 is not enabled on your host
       # DISABLE_IPV6: 'true'
     environment:
-      - PUID=3000
-      - PGID=100
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
     volumes:
-      - /mnt/user/data/appdata/nginx-proxy-manager:/data
-      - /mnt/user/data/appdata/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
+      - /mnt/data/appdata/nginx-proxy-manager:/data
+      - /mnt/data/appdata/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
 networks: {}

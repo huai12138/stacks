@@ -3,16 +3,16 @@ services:
     image: lscr.io/linuxserver/calibre-web:latest
     container_name: calibre-web
     environment:
-      - PUID=3000
-      - PGID=100
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
       - DOCKER_MODS=linuxserver/mods:universal-calibre #optional
       - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
     volumes:
-      - /mnt/user/data/appdata/calibre-web:/config
-      - /mnt/user/data/books:/books
+      - /mnt/data/appdata/calibre-web:/config
+      - /mnt/data/books:/books
     network_mode: bridge
     ports:
       - 8083:8083
     restart: unless-stopped
-
+networks: {}

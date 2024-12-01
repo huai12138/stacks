@@ -4,10 +4,10 @@ services:
     container_name: vaultwarden
     image: vaultwarden/server:latest
     volumes:
-      - /mnt/user/data/appdata/vaultwarden:/data
+      - /mnt/data/appdata/vaultwarden:/data
     environment:
-      - PUID=3000
-      - PGID=100
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
     network_mode: bridge
     ports:

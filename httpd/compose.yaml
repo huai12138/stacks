@@ -7,10 +7,10 @@ services:
     ports:
       - 9999:80
     environment:
-      - PUID=3000
-      - PGID=100
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
     volumes:
-      - /mnt/user/data/www:/usr/local/apache2/htdocs/
+      - /mnt/data/www:/usr/local/apache2/htdocs/
     restart: unless-stopped
-
+networks: {}

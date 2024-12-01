@@ -4,7 +4,8 @@ services:
     image: hestudy/sing-box-subscribe
     network_mode: bridge
     ports:
-      - "5000:5000"
+      - 5000:5000
     volumes:
-      - /mnt/user/data/appdata/sing-box-subscribe:/sing-box-subscribe/config_template
+      - /mnt/data/appdata/sing-box-subscribe:/sing-box-subscribe/config_template
     restart: unless-stopped
+networks: {}

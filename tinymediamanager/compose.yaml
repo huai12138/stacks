@@ -4,13 +4,13 @@ services:
     image: tinymediamanager/tinymediamanager:latest
     container_name: tinymediamanager
     environment:
-      - USER_ID=3000
-      - GROUP_ID=100
+      - USER_ID=1000
+      - GROUP_ID=1000
       - TZ=Asia/Shanghai
       - ALLOW_DIRECT_VNC=true
     volumes:
-      - /mnt/user/data/appdata/tinymediamanager:/data
-      - /mnt/user/data/media:/media
+      - /mnt/data/appdata/tinymediamanager:/data
+      - /mnt/data/media:/media
     network_mode: bridge
     ports:
       - 5900:5900 # VNC port

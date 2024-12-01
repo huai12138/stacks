@@ -5,13 +5,13 @@ services:
     user: node
     working_dir: /home/node/app
     environment:
-      - PUID=3000
-      - PGID=100
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
       - NODE_ENV=production
     volumes:
-      - /mnt/user/data/appdata/node/app:/home/node/app
-      - /mnt/user/data/appdata/node/.npm:/home/node/.npm
+      - /mnt/data/appdata/node/app:/home/node/app
+      - /mnt/data/appdata/node/.npm:/home/node/.npm
     expose:
       - "8081"
     network_mode: bridge

@@ -5,14 +5,14 @@ services:
     container_name: music-tag-web
     network_mode: bridge
     environment:
-      - PUID=3000
-      - PGID=100
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
     ports:
       - 8002:8002
     volumes:
-      - /mnt/user/data/media/Music:/app/media:rw
-      - /mnt/user/data/appdata/music_tag_web:/app/data
+      - /mnt/data/media/Music:/app/media:rw
+      - /mnt/data/appdata/music_tag_web:/app/data
     #    command: /start
     restart: unless-stopped
 networks: {}

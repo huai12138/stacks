@@ -1,4 +1,4 @@
-version: '3.8'  # 指定版本，建议使用 3.8 或更新版本
+version: "3.8" # 指定版本，建议使用 3.8 或更新版本
 services:
   plex:
     image: lscr.io/linuxserver/plex:latest
@@ -6,20 +6,20 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '2'  # 限制 CPU 数量为 2 个核心
+          cpus: "2" # 限制 CPU 数量为 2 个核心
     network_mode: bridge
     ports:
-      - "32400:32400"
+      - 32400:32400
     environment:
       - PUID=3000
-      - PGID=100
+      - PGID=1000
       - TZ=Asia/Shanghai
       - VERSION=docker
-      - PLEX_CLAIM=claim-P2sFa-NgXoyi7Cpmyzyq  # 可选项，确保没有空格
+      - PLEX_CLAIM=claim-P2sFa-NgXoyi7Cpmyzyq # 可选项，确保没有空格
     devices:
       - /dev/dri:/dev/dri
     volumes:
-      - /mnt/user/data/appdata/plex:/config
-      - /mnt/user/data/media:/media
+      - /mnt/data/appdata/plex:/config
+      - /mnt/data/media:/media
     restart: unless-stopped
 networks: {}

@@ -5,15 +5,15 @@ services:
     security_opt:
       - seccomp:unconfined #optional
     environment:
-      - PUID=3000
-      - PGID=100
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
       - PASSWORD= #optional
       - CLI_ARGS= #optional
     volumes:
-      - /mnt/user/data/appdata/calibre:/config
-      - /mnt/user/data/books:/books
-      - /mnt/user/data/epub:/epub
+      - /mnt/data/appdata/calibre:/config
+      - /mnt/data/books:/books
+      - /mnt/data/epub:/epub
     network_mode: bridge
     ports:
       - 8080:8080
