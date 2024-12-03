@@ -1,0 +1,15 @@
+version: "3.3"
+services:
+  adguardhome:
+    container_name: adguardhome
+    restart: unless-stopped
+    volumes:
+      - /mnt/data/appdata/adguardhome/workdir:/opt/adguardhome/work
+      - /mnt/data/appdata/adguardhome/confdir:/opt/adguardhome/conf
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 3003:3003/tcp
+    image: adguard/adguardhome
+    network_mode: bridge
+networks: {}
