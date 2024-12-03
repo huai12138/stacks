@@ -1,0 +1,16 @@
+version: "3.8" # 推荐使用最新的 Compose 文件版本
+services:
+  alist-strm:
+    container_name: alist-strm # 容器名称
+    image: itefuir/alist-strm:latest # 镜像名称及版本
+    stdin_open: true # 保持容器的 stdin 打开
+    tty: true # 支持终端交互
+    ports:
+      - 15000:5000 # 映射端口（宿主机:容器）
+    volumes:
+      # 宿主机目录与容器目录的映射
+      - /mnt/data/media:/mnt/data/media
+      - /mnt/data/appdata/alist-strm/config:/config
+    restart: unless-stopped # 容器自动重启策略
+    network_mode: bridge # 网络模式
+networks: {}
