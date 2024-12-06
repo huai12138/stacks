@@ -11,7 +11,7 @@ services:
     ports:
       - 8002:8002
     volumes:
-      - /mnt/data/media/Music:/app/media:rw
+      - /mnt/data/media/downloads/Music:/app/media:rw
       - /mnt/data/appdata/music_tag_web:/app/data
     #    command: /start
     restart: unless-stopped
