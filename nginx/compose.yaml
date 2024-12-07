@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-server
+    network_mode: bridge
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    ports:
+      - 80:80 # 映射 HTTP 端口
+    #      - 443:443 # 映射 HTTPS 端口 (如果使用 SSL)
+    volumes:
+      - /mnt/data/appdata/nginx:/etc/nginx # 挂载本地 Nginx 配置文件 
+      - /mnt/data/www:/usr/share/nginx/html # 挂载本地 HTML 文件夹
+      - /mnt/data/appdata/nginx/logs:/var/log/nginx # 挂载日志目录
+    restart: unless-stopped
+networks: {}
