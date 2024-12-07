@@ -19,6 +19,9 @@ find "$root_dir" -name "compose.yaml" | while read compose_file; do
     sudo docker-compose up -d
   )
 done
+# 清理无用镜像
+echo "清理无用镜像..."
+sudo docker image prune -f
 
-echo "所有容器已更新并重启完成！"
+echo "所有容器已更新并重启完成！无用镜像已清理！"
 
