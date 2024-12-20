@@ -1,4 +1,3 @@
-version: "3"
 services:
   music-tag:
     image: xhongc/music_tag_web:latest

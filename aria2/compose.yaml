@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   Aria2-Pro:
     container_name: aria2-pro

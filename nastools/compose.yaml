@@ -1,4 +1,3 @@
-version: "3"
 services:
   nas-tools:
     image: nastool/nas-tools:latest

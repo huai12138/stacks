@@ -1,4 +1,3 @@
-version: "3.8" # 推荐使用最新的 Compose 文件版本
 services:
   alist-strm:
     container_name: alist-strm # 容器名称
