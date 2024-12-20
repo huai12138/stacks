@@ -3,11 +3,11 @@ services:
     container_name: homeassistant
     image: ghcr.io/home-assistant/home-assistant:stable
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=3000
+      - PGID=3000
       - TZ=Asia/Shanghai
     volumes:
-      - /mnt/data/appdata/homeassistant:/config
+      - /mnt/user/data/appdata/homeassistant:/config
       - /etc/localtime:/etc/localtime:ro
       - /run/dbus:/run/dbus:ro
     restart: unless-stopped

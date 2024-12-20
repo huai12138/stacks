@@ -3,12 +3,12 @@ services:
     image: lscr.io/linuxserver/emby:latest
     container_name: emby
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=3000
+      - PGID=3000
       - TZ=Asia/Shanghai
     volumes:
-      - /mnt/data/appdata/emby:/config
-      - /mnt/data/media:/data
+      - /mnt/user/data/appdata/emby:/config
+      - /mnt/user/data/media:/data
     network_mode: bridge
     ports:
       - 8096:8096

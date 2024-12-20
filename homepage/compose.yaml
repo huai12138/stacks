@@ -6,12 +6,12 @@ services:
     ports:
       - 3001:3000
     volumes:
-      - /mnt/data/appdata/homepage:/app/config # Make sure your local config directory exists
-      - /mnt/data/appdata/homepage/icons:/app/public/icons
+      - /mnt/user/data/appdata/homepage:/app/config # Make sure your local config directory exists
+      - /mnt/user/data/appdata/homepage/icons:/app/public/icons
       - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations, see alternative methods
     environment:
-      - PUID=1000
-      - PGID=1000
+#      - PUID=3000
+#      - PGID=3000
       - TZ=Asia/Shanghai
     restart: unless-stopped
 networks: {}

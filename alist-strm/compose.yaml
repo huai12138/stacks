@@ -8,8 +8,8 @@ services:
       - 15000:5000 # 映射端口（宿主机:容器）
     volumes:
       # 宿主机目录与容器目录的映射
-      - /mnt/data/media:/mnt/data/media
-      - /mnt/data/appdata/alist-strm/config:/config
+      - /mnt/user/data/media:/mnt/user/data/media
+      - /mnt/user/data/appdata/alist-strm/config:/config
     restart: unless-stopped # 容器自动重启策略
     network_mode: bridge # 网络模式
 networks: {}
