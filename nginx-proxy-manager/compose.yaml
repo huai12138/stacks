@@ -5,15 +5,15 @@ services:
     restart: unless-stopped
     network_mode: bridge
     ports:
-      - 980:80 # Public HTTP Port
-      - 9443:443 # Public HTTPS Port
+      - 8080:80 # Public HTTP Port
+      - 8443:443 # Public HTTPS Port
       - 81:81 # Admin Web Port
       # Add any other Stream port you want to expose
       # - '21:21' # FTP
     environment:
       DISABLE_IPV6: "true" # Keep this if IPv6 is disabled on your host
-#      PUID: 3000
-#      PGID: 3000
+      #      PUID: 3000
+      #      PGID: 3000
       TZ: Asia/Shanghai
       # Uncomment this if you want to change the location of
       # the SQLite DB file within the container
