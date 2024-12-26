@@ -5,8 +5,8 @@ services:
     volumes:
       - /mnt/user/data/appdata/vaultwarden:/data
     environment:
-      - PUID=3000
-      - PGID=3000
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
     network_mode: bridge
     ports:

@@ -5,8 +5,8 @@ services:
     security_opt:
       - seccomp:unconfined #optional
     environment:
-      - PUID=3000
-      - PGID=3000
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
       - PASSWORD= #optional
       - CLI_ARGS= #optional
@@ -17,6 +17,5 @@ services:
     network_mode: bridge
     ports:
       - 8081:8080
-      
     restart: unless-stopped
 networks: {}

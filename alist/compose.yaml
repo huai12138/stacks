@@ -9,8 +9,8 @@ services:
     ports:
       - 5244:5244
     environment:
-      - PUID=3000
-      - PGID=3000
+      - PUID=1000
+      - PGID=1000
       - UMASK=022
       - TZ=Asia/Shanghai
     restart: unless-stopped

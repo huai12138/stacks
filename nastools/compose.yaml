@@ -7,8 +7,8 @@ services:
       - /mnt/user/data/appdata/nastools:/config # 冒号左边请修改为你想保存配置的路径
       - /mnt/user/data/media:/media # 媒体目录，多个目录需要分别映射进来，需要满足配置文件说明中的要求
     environment:
-      - PUID=3000 # 想切换为哪个用户来运行程序，该用户的uid
-      - PGID=3000 # 想切换为哪个用户来运行程序，该用户的gid
+      - PUID=1000 # 想切换为哪个用户来运行程序，该用户的uid
+      - PGID=1000 # 想切换为哪个用户来运行程序，该用户的gid
       - UMASK=022 # 掩码权限，默认000，可以考虑设置为022
       - NASTOOL_AUTO_UPDATE=false # 如需在启动容器时自动升级程程序请设置为true
       - NASTOOL_CN_UPDATE=false # 如果开启了容器启动自动升级程序，并且网络不太友好时，可以设置为true，会使用国内源进行软件更新
