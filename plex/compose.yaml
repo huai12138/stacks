@@ -11,7 +11,7 @@ services:
     ports:
       - 32400:32400
     environment:
-      - PUID=3000
+      - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
       - VERSION=docker
@@ -19,7 +19,7 @@ services:
     devices:
       - /dev/dri:/dev/dri
     volumes:
-      - /mnt/data/appdata/plex:/config
-      - /mnt/data/media:/media
+      - /mnt/user/data/appdata/plex:/config
+      - /mnt/user/data/media:/media
     restart: unless-stopped
 networks: {}

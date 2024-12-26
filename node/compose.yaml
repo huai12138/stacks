@@ -10,8 +10,8 @@ services:
       - TZ=Asia/Shanghai
       - NODE_ENV=production
     volumes:
-      - /mnt/data/appdata/node/app:/home/node/app
-      - /mnt/data/appdata/node/.npm:/home/node/.npm
+      - /mnt/user/data/appdata/node/app:/home/node/app
+      - /mnt/user/data/appdata/node/.npm:/home/node/.npm
     expose:
       - "8081"
     network_mode: bridge
