@@ -6,6 +6,6 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - /mnt/user/data/appdata/sing-box-subscribe:/sing-box-subscribe/config_template
+      - /mnt/user/data/appdata/sing-box-subscribe:/sing-box-subscribe
     restart: unless-stopped
 networks: {}
