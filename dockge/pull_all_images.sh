@@ -13,10 +13,10 @@ find "$root_dir" -name "compose.yaml" | while read compose_file; do
     cd "$dir_name"
     
     # 拉取镜像
-    sudo docker-compose pull
+    sudo docker compose pull
     
     # 重启容器
-    sudo docker-compose up -d
+    sudo docker compose up -d
   )
 done
 # 清理无用镜像
