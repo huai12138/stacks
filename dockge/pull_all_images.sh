@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置目标根目录
-root_dir="/mnt/data/appdata/stacks"
+root_dir="/mnt/user/data/appdata/stacks"
 
 # 遍历目录及子目录
 find "$root_dir" -name "compose.yaml" | while read compose_file; do
