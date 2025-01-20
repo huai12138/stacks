@@ -1,0 +1,16 @@
+services:
+  uptime-kuma:
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 3003:3001
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Asia/Shanghai
+    volumes:
+      - /mnt/user/data/appdata/uptime-kuma:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    container_name: uptime-kuma
+    image: louislam/uptime-kuma:latest
+networks: {}
