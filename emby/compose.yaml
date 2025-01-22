@@ -12,7 +12,6 @@ services:
     network_mode: bridge
     ports:
       - 8096:8096
-      - 8920:8920 #optional
     devices:
       - /dev/dri:/dev/dri #optional
     restart: unless-stopped
