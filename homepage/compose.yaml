@@ -8,7 +8,7 @@ services:
     volumes:
       - /mnt/user/data/appdata/homepage:/app/config # Make sure your local config directory exists
       - /mnt/user/data/appdata/homepage/icons:/app/public/icons
-      - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations, see alternative methods
+      - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations, see alternative methods 
     environment:
       - PUID=1000
       - PGID=1000

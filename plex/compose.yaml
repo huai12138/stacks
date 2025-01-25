@@ -1,4 +1,3 @@
-version: "3.8" # 指定版本，建议使用 3.8 或更新版本
 services:
   plex:
     image: lscr.io/linuxserver/plex:latest
@@ -15,7 +14,7 @@ services:
       - PGID=1000
       - TZ=Asia/Shanghai
       - VERSION=docker
-      - PLEX_CLAIM=claim-P2sFa-NgXoyi7Cpmyzyq # 可选项，确保没有空格
+      - PLEX_CLAIM=claim-rrMcP2sGc6PmF95iLfq3 # 可选项，确保没有空格
     devices:
       - /dev/dri:/dev/dri
     volumes:
