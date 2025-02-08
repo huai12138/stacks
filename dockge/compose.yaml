@@ -3,6 +3,7 @@ services:
     image: louislam/dockge:latest
     container_name: dockge
     restart: unless-stopped
+    network_mode: bridge
     ports:
       - 5001:5001
     volumes:
