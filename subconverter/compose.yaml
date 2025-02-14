@@ -1,0 +1,15 @@
+services:
+  subconverter:
+    image: asdlokj1qpi23/subconverter:latest
+    container_name: subconverter
+    network_mode: bridge
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - /mnt/user/data/appdata/subconverter/base:/base
+    ports:
+      - 25500:25500
+    restart: unless-stopped
+networks: {}

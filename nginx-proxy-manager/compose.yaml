@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     network_mode: bridge
     ports:
-      - 8080:80 # Public HTTP Port
+      - 980:80 # Public HTTP Port
       - 8443:443 # Public HTTPS Port
       - 81:81 # Admin Web Port
       # Add any other Stream port you want to expose
