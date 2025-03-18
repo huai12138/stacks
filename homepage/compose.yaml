@@ -13,5 +13,6 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
+      - HOMEPAGE_ALLOWED_HOSTS=*
     restart: unless-stopped
 networks: {}

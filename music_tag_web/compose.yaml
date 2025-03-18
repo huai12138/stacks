@@ -12,6 +12,7 @@ services:
     volumes:
       - /mnt/user/data/media/downloads/Music:/app/media:rw
       - /mnt/user/data/appdata/music_tag_web:/app/data
+      - /mnt/user/data/appdata/music_tag_web/ffmpeg/bin:/app/data/bin
     #    command: /start
     restart: unless-stopped
 networks: {}

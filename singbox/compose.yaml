@@ -12,8 +12,9 @@ services:
       - 5000:5000
     volumes:
       - /mnt/user/data/appdata/singbox:/usr/src/myapp
-    command: |
-      sh -c "pip install -r requirements.txt && python app.py"
+    command: >
+      sh -c "pip install -r requirements.txt &&
+      python app.py"
     restart: unless-stopped
     stdin_open: true # 等同于 -i
     tty: true # 等同于 -t
