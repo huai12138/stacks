@@ -5,8 +5,8 @@ services:
     stdin_open: true # 保持容器的 stdin 打开
     tty: true # 支持终端交互
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=3000
+      - PGID=3000
       - TZ=Asia/Shanghai
     ports:
       - 15000:5000 # 映射端口（宿主机:容器）

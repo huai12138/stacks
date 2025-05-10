@@ -12,8 +12,8 @@ services:
       # - '21:21' # FTP
     environment:
       DISABLE_IPV6: "true" # Keep this if IPv6 is disabled on your host
-      PUID: "1000"
-      PGID: "1000"
+      PUID: "3000"
+      PGID: "3000"
       TZ: Asia/Shanghai
       # Uncomment this if you want to change the location of
       # the SQLite DB file within the container

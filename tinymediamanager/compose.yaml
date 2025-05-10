@@ -3,8 +3,8 @@ services:
     image: tinymediamanager/tinymediamanager:latest
     container_name: tinymediamanager
     environment:
-      - USER_ID=1000
-      - GROUP_ID=1000
+      - USER_ID=3000
+      - GROUP_ID=3000
       - TZ=Asia/Shanghai
       - ALLOW_DIRECT_VNC=true
     volumes:

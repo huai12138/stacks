@@ -5,8 +5,8 @@ services:
     security_opt:
       - seccomp:unconfined #optional
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=3000
+      - PGID=3000
       - TZ=Asia/Shanghai
       - PASSWORD= #optional
       - CLI_ARGS= #optional

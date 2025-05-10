@@ -4,11 +4,11 @@ services:
     container_name: nginx-server
     network_mode: bridge
     environment:
-      - PUID=1000
-      - PGID=1000
+      - PUID=3000
+      - PGID=3000
       - TZ=Asia/Shanghai
     ports:
-      - 80:80 # 映射 HTTP 端口
+      - 8080:80 # 映射 HTTP 端口
     #      - 443:443 # 映射 HTTPS 端口 (如果使用 SSL)
     volumes:
       - /mnt/user/data/appdata/nginx:/etc/nginx # 挂载本地 Nginx 配置文件 

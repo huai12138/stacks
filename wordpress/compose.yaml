@@ -5,8 +5,8 @@ services:
     ports:
       - 8088:80
     environment:
-      PUID: 1000
-      PGID: 1000
+      PUID: 3000
+      PGID: 3000
       TZ: Asia/Shanghai
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: exampleuser
@@ -18,8 +18,8 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      PUID: 1000
-      PGID: 1000
+      PUID: 3000
+      PGID: 3000
       TZ: Asia/Shanghai
       MYSQL_DATABASE: exampledb
       MYSQL_USER: exampleuser
