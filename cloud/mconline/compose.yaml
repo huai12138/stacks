@@ -1,7 +1,7 @@
 services:
   python-script:
     image: python:3
-    container_name: singbox
+    container_name: mconline
     working_dir: /usr/src/myapp
     network_mode: bridge
     ports:
