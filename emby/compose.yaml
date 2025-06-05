@@ -3,8 +3,8 @@ services:
     image: emby/embyserver:latest
     container_name: emby
     environment:
-      - PUID=3000
-      - PGID=3000
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
     volumes:
       - /mnt/user/data/appdata/emby:/config

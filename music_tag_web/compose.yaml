@@ -4,8 +4,8 @@ services:
     container_name: music-tag-web
     network_mode: bridge
     environment:
-      - PUID=3000
-      - PGID=3000
+      - PUID=1000
+      - PGID=1000
       - TZ=Asia/Shanghai
     ports:
       - 8002:8002
