@@ -16,7 +16,7 @@ services:
       - TZ=Asia/Shanghai
     volumes:
       - /mnt/user/data/appdata/aria2:/config
-      - /mnt/user/data/media/downloads:/downloads
+      - /mnt/user/data/Downloads:/downloads
     # If you use host network mode, then no port mapping is required.
     # This is the easiest way to use IPv6 networks.
     #   network_mode: host

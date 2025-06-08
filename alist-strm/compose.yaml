@@ -13,6 +13,7 @@ services:
     volumes:
       # 宿主机目录与容器目录的映射
       - /mnt/user/data/media:/mnt/user/data/media
+      - /mnt/user/data/Downloads:/mnt/user/data/Downloads
       - /mnt/user/data/appdata/alist-strm/config:/config
     restart: unless-stopped # 容器自动重启策略
     network_mode: bridge # 网络模式
