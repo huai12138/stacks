@@ -9,7 +9,7 @@ services:
       - ALLOW_DIRECT_VNC=true
     volumes:
       - /mnt/user/data/appdata/tinymediamanager:/data
-      - /mnt/user/data/media:/media
+      - /mnt/user/data/Downloads/media:/media
     network_mode: bridge
     ports:
       - 5900:5900 # VNC port

@@ -9,7 +9,7 @@ services:
       - TZ=Asia/Shanghai
     ports:
       - 80:80 # 映射 HTTP 端口
-      - 8443:443 # 映射 HTTPS 端口 (如果使用 SSL)
+      - 443:443 # 映射 HTTPS 端口 (如果使用 SSL)
     volumes:
       - /mnt/user/data/appdata/nginx:/etc/nginx # 挂载本地 Nginx 配置文件 
       - /mnt/user/data/www:/usr/share/nginx/html # 挂载本地 HTML 文件夹
