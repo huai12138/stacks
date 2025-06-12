@@ -3,11 +3,11 @@ services:
     image: docker.io/hacdias/webdav:latest
     container_name: webdav-server
     ports:
-      - 6065:6065
+      - "6065:6065"
     volumes:
       - /mnt/user/data/www/webdav:/srv:Z
       - /mnt/user/data/appdata/webdav/config.yaml:/config.yaml:Z
     environment:
       - WEBDAV_CONFIG=/config.yaml
-    user: 1000:1000
+
 
