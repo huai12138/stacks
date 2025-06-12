@@ -1,18 +1,16 @@
 services:
   emby:
-    image: emby/embyserver:latest
+    image: docker.io/emby/embyserver:latest
     container_name: emby
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
     volumes:
-      - /mnt/user/data/appdata/emby:/config
-      - /mnt/user/data/Downloads/media:/data
-    network_mode: bridge
+      - /mnt/user/data/appdata/emby:/config:Z
+      - /mnt/user/data/Downloads/media:/data:Z
     ports:
       - 8096:8096
     devices:
-      - /dev/dri:/dev/dri #optional
-    restart: unless-stopped
-networks: {}
+      - /dev/dri:/dev/dri
+

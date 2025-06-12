@@ -1,15 +1,12 @@
 services:
   vaultwarden:
     container_name: vaultwarden
-    image: vaultwarden/server:latest
+    image: docker.io/vaultwarden/server:latest
     volumes:
-      - /mnt/user/data/appdata/vaultwarden:/data
+      - /mnt/user/data/appdata/vaultwarden:/data:Z
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
-    network_mode: bridge
     ports:
       - 8181:80
-    restart: unless-stopped
-networks: {}

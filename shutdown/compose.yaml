@@ -1,20 +1,17 @@
 services:
   python-script:
-    image: python:3
+    image: docker.io/library/python:3
     container_name: shutdown
     working_dir: /usr/src/myapp
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
-    network_mode: bridge
     ports:
       - 5008:5008
     volumes:
-      - /mnt/user/data/www:/usr/src/myapp
+      - /mnt/user/data/www:/usr/src/myapp:Z
     command: |
       sh -c "pip install -r requirements.txt && python app.py"
-    restart: unless-stopped
     stdin_open: true # 等同于 -i
     tty: true # 等同于 -t
-networks: {}

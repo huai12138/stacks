@@ -11,11 +11,8 @@ services:
       - PASSWORD= #optional
       - CLI_ARGS= #optional
     volumes:
-      - /mnt/user/data/appdata/calibre:/config
-      - /mnt/user/data/books:/books
-      - /mnt/user/data/epub:/epub
-    network_mode: bridge
+      - /mnt/user/data/appdata/calibre:/config:Z
+      - /mnt/user/data/books:/books:Z
+      - /mnt/user/data/epub:/epub:Z
     ports:
       - 8081:8080
-    restart: unless-stopped
-networks: {}

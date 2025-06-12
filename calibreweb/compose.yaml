@@ -9,9 +9,8 @@ services:
       - DOCKER_MODS=linuxserver/mods:universal-calibre #optional
       - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
     volumes:
-      - /mnt/user/data/appdata/calibre-web:/config
-      - /mnt/user/data/books:/books
-    network_mode: bridge
+      - /mnt/user/data/appdata/calibre-web:/config:Z
+      - /mnt/user/data/books:/books:Z
     ports:
       - 8083:8083
     restart: unless-stopped

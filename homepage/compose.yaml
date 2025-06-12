@@ -2,12 +2,11 @@ services:
   homepage:
     image: ghcr.io/gethomepage/homepage:latest
     container_name: homepage
-    network_mode: bridge
     ports:
       - 3001:3000
     volumes:
-      - /mnt/user/data/appdata/homepage:/app/config # Make sure your local config directory exists
-      - /mnt/user/data/appdata/homepage/icons:/app/public/icons
+      - /mnt/user/data/appdata/homepage:/app/config:Z # Make sure your local config directory exists
+      - /mnt/user/data/appdata/homepage/icons:/app/public/icons:Z
       - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations, see alternative methods 
     environment:
       - PUID=1000
@@ -15,4 +14,4 @@ services:
       - TZ=Asia/Shanghai
       - HOMEPAGE_ALLOWED_HOSTS=*
     restart: unless-stopped
-networks: {}
+

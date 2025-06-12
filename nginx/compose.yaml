@@ -1,9 +1,7 @@
 services:
   nginx:
-    #build: .
-    image: nginx:alpine
+    image: docker.io/nginx:alpine
     container_name: nginx-server
-    network_mode: bridge
     environment:
       - PUID=1000
       - PGID=1000
@@ -12,20 +10,9 @@ services:
       - 80:80 # 映射 HTTP 端口
       - 443:443 # 映射 HTTPS 端口 (如果使用 SSL)
     volumes:
-      - /mnt/user/data/appdata/nginx:/etc/nginx # 挂载本地 Nginx 配置文件 
-      - /mnt/user/data/www:/usr/share/nginx/html # 挂载本地 HTML 文件夹
-      - /mnt/user/data/appdata/nginx/logs:/var/log/nginx
-        # 挂载日志目录
-        # 添加 WebDAV 专用挂载点，确保权限正确
-      - /mnt/user/data/webdav:/usr/share/nginx/html/webdav:rw
-    restart: unless-stopped
-    command: >
-      sh -c "
-        # 创建 WebDAV 目录并设置权限
-        mkdir -p /usr/share/nginx/html/webdav &&
-        chmod -R 777 /usr/share/nginx/html/webdav &&
-        
-        # 启动 nginx
-        nginx -g 'daemon off;'
-      "
-networks: {}
+      - /mnt/user/data/appdata/nginx:/etc/nginx:Z # 挂载本地 Nginx 配置文件，添加 Z 标志用于 SELinux
+      - /mnt/user/data/www:/usr/share/nginx/html:Z # 挂载本地 HTML 文件夹，添加 Z 标志
+      - /mnt/user/data/appdata/nginx/logs:/var/log/nginx:Z # 启用日志目录挂载
+    # userns_mode: "keep-id"
+    # # user: "1000:1000"
+

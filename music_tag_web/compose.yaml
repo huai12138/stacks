@@ -1,8 +1,7 @@
 services:
   music-tag:
-    image: xhongc/music_tag_web:latest
+    image: docker.io/xhongc/music_tag_web:latest
     container_name: music-tag-web
-    network_mode: bridge
     environment:
       - PUID=1000
       - PGID=1000
@@ -10,9 +9,8 @@ services:
     ports:
       - 8002:8002
     volumes:
-      - /mnt/user/data/Downloads/media/Music:/app/media:rw
-      - /mnt/user/data/appdata/music_tag_web:/app/data
-      - /mnt/user/data/appdata/music_tag_web/ffmpeg/bin:/app/data/bin
+      - /mnt/user/data/Downloads/media/Music:/app/media:Z
+      - /mnt/user/data/appdata/music_tag_web:/app/data:Z
+      - /mnt/user/data/appdata/music_tag_web/ffmpeg/bin:/app/data/bin:Z
     #    command: /start
-    restart: unless-stopped
-networks: {}
+

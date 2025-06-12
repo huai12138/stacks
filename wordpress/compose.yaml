@@ -1,7 +1,6 @@
 services:
   wordpress:
-    image: wordpress
-    restart: always
+    image: docker.io/library/wordpress:latest
     ports:
       - 8088:80
     environment:
@@ -13,10 +12,9 @@ services:
       WORDPRESS_DB_PASSWORD: examplepass
       WORDPRESS_DB_NAME: exampledb
     volumes:
-      - /mnt/user/data/appdata/wordpress:/var/www/html
+      - /mnt/user/data/appdata/wordpress:/var/www/html:Z
   db:
-    image: mysql:8.0
-    restart: always
+    image: docker.io/library/mysql:8.0
     environment:
       PUID: 1000
       PGID: 1000
@@ -26,5 +24,5 @@ services:
       MYSQL_PASSWORD: examplepass
       MYSQL_RANDOM_ROOT_PASSWORD: "1"
     volumes:
-      - /mnt/user/data/appdata/db:/var/lib/mysql
-networks: {}
+      - /mnt/user/data/appdata/db:/var/lib/mysql:Z
+
