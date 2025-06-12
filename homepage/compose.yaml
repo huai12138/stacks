@@ -7,11 +7,11 @@ services:
     volumes:
       - /mnt/user/data/appdata/homepage:/app/config:Z # Make sure your local config directory exists
       - /mnt/user/data/appdata/homepage/icons:/app/public/icons:Z
-      # - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations, see alternative methods 
+      # - /run/user/1000/podman/podman.sock:/var/run/docker.sock # User-specific Podman socket
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
       - HOMEPAGE_ALLOWED_HOSTS=*
-    restart: unless-stopped
+
 

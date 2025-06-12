@@ -3,13 +3,16 @@ services:
     container_name: homeassistant
     image: ghcr.io/home-assistant/home-assistant:stable
     environment:
-      - PUID=1000
-      - PGID=1000
       - TZ=Asia/Shanghai
+
     volumes:
       - /mnt/user/data/appdata/homeassistant:/config:Z
       - /etc/localtime:/etc/localtime:ro
-      - /run/dbus:/run/dbus:ro
-    privileged: true
-    network_mode: host
+      # - /run/dbus:/run/dbus:ro
+    ports:
+      - "8123:8123"    # Home Assistant Web UI
+      - "1900:1900/udp" # UPnP发现
+      - "5353:5353/udp" # mDNS/Bonjour
+      # - "51827:51827"   # HomeKit (如果启用)
+ 
 
