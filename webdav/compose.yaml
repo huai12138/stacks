@@ -1,0 +1,15 @@
+services:
+  webdav:
+    image: hacdias/webdav:latest
+    container_name: webdav-server
+    restart: unless-stopped
+    network_mode: bridge
+    ports:
+      - 6065:6065
+    volumes:
+      - /mnt/user/data/www/webdav:/srv
+      - /mnt/user/data/appdata/webdav/config.yaml:/config.yaml
+    environment:
+      - WEBDAV_CONFIG=/config.yaml
+    user: 1000:1000
+networks: {}

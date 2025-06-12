@@ -1,6 +1,7 @@
 services:
   nginx:
-    image: nginx:latest
+    #build: .
+    image: nginx:alpine
     container_name: nginx-server
     network_mode: bridge
     environment:
@@ -13,6 +14,18 @@ services:
     volumes:
       - /mnt/user/data/appdata/nginx:/etc/nginx # 挂载本地 Nginx 配置文件 
       - /mnt/user/data/www:/usr/share/nginx/html # 挂载本地 HTML 文件夹
-      - /mnt/user/data/appdata/nginx/logs:/var/log/nginx # 挂载日志目录
+      - /mnt/user/data/appdata/nginx/logs:/var/log/nginx
+        # 挂载日志目录
+        # 添加 WebDAV 专用挂载点，确保权限正确
+      - /mnt/user/data/webdav:/usr/share/nginx/html/webdav:rw
     restart: unless-stopped
+    command: >
+      sh -c "
+        # 创建 WebDAV 目录并设置权限
+        mkdir -p /usr/share/nginx/html/webdav &&
+        chmod -R 777 /usr/share/nginx/html/webdav &&
+        
+        # 启动 nginx
+        nginx -g 'daemon off;'
+      "
 networks: {}
