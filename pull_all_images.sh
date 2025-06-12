@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# sudo loginctl enable-linger $(whoami)
 # 设置目标根目录
 root_dir="/mnt/user/data/appdata/stacks"
 
