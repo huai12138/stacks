@@ -2,17 +2,16 @@ services:
   calibre:
     image: lscr.io/linuxserver/calibre:latest
     container_name: calibre
-    security_opt:
-      - seccomp:unconfined #optional
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Asia/Shanghai
-      - PASSWORD= #optional
-      - CLI_ARGS= #optional
+      - PASSWORD= 110
+      - CLI_ARGS= abc
     volumes:
       - /mnt/user/data/appdata/calibre:/config:Z
       - /mnt/user/data/books:/books:Z
       - /mnt/user/data/epub:/epub:Z
     ports:
       - 8081:8080
+
