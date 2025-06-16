@@ -12,13 +12,17 @@ find "$root_dir" -name "compose.yaml" | while read compose_file; do
   (
     cd "$dir_name"
     
-    # 拉取镜像
-   # podman-compose pull
+    # 停止并移除容器
+    podman-compose down
     
-    # 重启容器
+    # 拉取最新镜像
+    podman-compose pull
+    
+    # 启动容器
     podman-compose up -d
   )
 done
+
 # 清理无用镜像
 echo "清理无用镜像..."
 podman image prune -f
