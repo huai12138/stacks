@@ -1,0 +1,17 @@
+services:
+  emby:
+    image: docker.io/emby/embyserver:latest
+    container_name: emby
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Shanghai
+    volumes:
+      - /mnt/user/data/appdata/emby:/config:Z
+      - /mnt/user/data/Downloads/media:/data:Z
+    ports:
+      - 8096:8096
+      - 7359:7359/udp
+    devices:
+      - /dev/dri:/dev/dri
+
