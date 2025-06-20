@@ -16,4 +16,4 @@ services:
       - /dev/dri:/dev/dri
     volumes:
       - /mnt/user/data/appdata/plex:/config:Z
-      - /mnt/user/data/media:/media:z
+      - /mnt/user/data/Downloads/media:/media:z
